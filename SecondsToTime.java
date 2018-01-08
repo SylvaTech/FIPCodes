@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 /**
-	This program gets the full time from the number of seconds given to it
+	This program displays the full time in hour minute second format from the number of seconds given to it
 */
 public class SecondsToTime{
 	private static final int SEC_IN_HOUR = 3600;

@@ -1,6 +1,10 @@
 import java.util.Scanner;
 import java.util.Random;
 
+/**
+	Matches a user's entered value against an auto-generated number and returns the difference
+	between the two numbers if they do not match
+*/
 public class GuessMyNumber{
 	public static void main(String[] args){
 		Scanner scan = new Scanner(System.in);
