@@ -20,10 +20,10 @@ public class Time{
 		int hour2 = 22;
 		int minute2 = 53;
 		int second2 = 12;
-		int elapsedHour = (hour2 - hour);
-		int elapsedMinutes =(minute2 - minute);
-		int elapsedSeconds = (second2 - second);
-		String elapsedTime = elapsedHour +":"+ elapsedMinutes + ":" + elapsedSeconds;
+		int elapsedHour = Math.abs(hour2 - hour);
+		int elapsedMinutes = Math.abs(minute2 - minute);
+		int elapsedSeconds = Math.abs(second2 - second);
+		String elapsedTime = elapsedHour +" hour(s) "+ elapsedMinutes + " minutes(s) " + elapsedSeconds + " second(s)";
 		System.out.println("The elapsed time since this exercise is: " + elapsedTime);
 		//To calculate percentage of day spent
 		int totalSecsInDay = secFromMidnight + secToMidnight;
