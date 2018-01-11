@@ -1,8 +1,14 @@
+import java.util.Scanner;
 /** Ex.. 6.7. to 6.9
 	The aim of these exercise is to write and understand the flow of recursive methods
 */
 public class Recursive{
 	//Some Recursive Methods
+	/**Calculates the sum of odd integers from one to a given odd integer n
+	@param n an odd integer to which we want to add odd numbers from 1 to.
+	@return the sum of odd integers from 1 to n.
+	*/
+	private static Scanner scan = new Scanner(System.in);
 	static int oddSum(int n){
 		int sum = 0;
 		if(n % 2 !=0){
@@ -36,25 +42,51 @@ public class Recursive{
 
 		return ackValue;
 	}
-	//A method for the power function
+	//A Recursive power function
 	static double power(double x, int n){
-		double solution = Math.pow(x,n);
+		double solution = 0.0; //Math.pow(x,n);
 		if(n==0){
-			//solution = 1;
 			return 1;
 		}
-		else if (n>0){
+		double powOfHalfN = power(x,(n/2));
+		//For odd numbers
+		 if (n%2 != 0){
 			System.out.println("x is: "+ x);
 			System.out.println("n is: "+ n);
-			solution = x * (power(x,n-1));
+			//solution = x * (power(x,n-1));
+			solution = x*(powOfHalfN *powOfHalfN);
+			return solution;
+		}
+		//For even numbers
+		else if(n%2==0){
+			//solution = power(x,n/2) * power(x,n/2);
+			System.out.println("x is: "+ x);
+			System.out.println("n is: "+ n);
+			solution = powOfHalfN * powOfHalfN;
 			return solution;
 		}
 
 		return solution;
 	}
 	public static void main(String[] args){
-		//System.out.println("The sum is:"+oddSum(7));
-		//System.out.println(ack(20,1));
-		System.out.println(power((1.0/3.0),2));
+		//Value for the oddSum method
+		System.out.println("For the oddSum function Enter an odd integer for n: ");
+		int c = scan.nextInt();
+		System.out.println("The sum is:"+oddSum(c));
+
+		//Values for the ack function;
+		System.out.println("Next is the Ackerman function.                                                                                                           \nN/B: The Ackerman function gets large quickly.                                                                                          \nHence, Use small values for m and n to avoid overflow.");
+		System.out.println("Enter an integer for m: ");
+		int m = scan.nextInt();
+		System.out.println("Enter an integer for n: ");
+		int n = scan.nextInt();
+		System.out.println(ack(m,n));
+		//Values for the power function
+		System.out.println("You are about to use the power function");
+		System.out.println("Enter x (It can be a decimal): ");
+		double x = scan.nextDouble();
+		System.out.println("Enter n: ");
+		int a = scan.nextInt();
+		System.out.println(power(x,a));
 	}
 }
