@@ -22,7 +22,7 @@ public class Recursive{
 			}
 		}
 		else{
-			System.out.println(n + " is an even number.\nEnter an odd integer");
+			System.err.println(n + " is an even number.\nEnter an odd integer");
 		}
 		return sum;
 	}
